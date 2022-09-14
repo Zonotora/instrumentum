@@ -1,0 +1,13 @@
+{
+  "name": "instrumentum-rs",
+  "version": "0.1.0",
+  "files": [
+    "instrumentum_rs_bg.wasm",
+    "instrumentum_rs.js",
+    "instrumentum_rs_bg.js",
+    "instrumentum_rs.d.ts"
+  ],
+  "module": "instrumentum_rs.js",
+  "types": "instrumentum_rs.d.ts",
+  "sideEffects": false
+}
