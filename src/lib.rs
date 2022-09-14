@@ -7,6 +7,12 @@ use wasm_bindgen::prelude::*;
 static ALLOC: wee_alloc::WeeAlloc = wee_alloc::WeeAlloc::INIT;
 
 #[wasm_bindgen]
+extern "C" {
+    fn alert(s: &str);
+}
+
+#[wasm_bindgen]
 pub fn greet() -> String {
-    String::from("Greetings, this is a message from rust!")
+    alert("Greetings");
+    String::from("Greetings")
 }
