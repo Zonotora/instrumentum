@@ -2,6 +2,7 @@ import { useState } from "react";
 import * as wasm from "instrumentum-rs";
 import Container from "../components/container";
 import Separator from "../components/separator";
+import Instruments from "../components/instruments";
 
 type Width = {
   left: number;
@@ -30,7 +31,7 @@ const App = () => {
   return (
     <div className="main">
       <Container width={width.left}>
-        <div>1</div>
+        <Instruments />
       </Container>
       <Separator />
       <Container width={width.middle}>

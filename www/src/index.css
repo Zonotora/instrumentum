@@ -27,12 +27,24 @@ a {
 
 .container {
   height: 100vh;
-  background-color: red;
 }
 
 .separator {
   width: 4px;
   height: 100vh;
-  background-color: green;
+  background-color: var(--border-color);
   cursor: grab;
+}
+
+.instruments {
+  display: flex;
+  flex-direction: column;
+}
+
+.instruments div {
+  cursor: pointer;
+}
+
+.instruments div:hover {
+  background-color: var(--border-color);
 }
