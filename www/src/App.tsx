@@ -3,6 +3,7 @@ import * as wasm from "instrumentum-rs";
 import Container from "../components/container";
 import Separator from "../components/separator";
 import Instruments from "../components/instruments";
+import Recipe from "../components/recipe";
 
 type Width = {
   left: number;
@@ -34,7 +35,7 @@ const App = () => {
       </Container>
       <Separator />
       <Container width={width.middle}>
-        <div>2</div>
+        <Recipe />
       </Container>
       <Separator />
       <Container width={width.right}>
