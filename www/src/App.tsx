@@ -10,11 +10,10 @@ type Width = {
   right: number;
 };
 
-const intialWidth = 100 / 3;
 const initialState: Width = {
-  left: intialWidth,
-  middle: intialWidth,
-  right: intialWidth,
+  left: 100 / 5,
+  middle: (100 * 2) / 5,
+  right: (100 * 2) / 5,
 };
 
 const App = () => {

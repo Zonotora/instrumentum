@@ -33,7 +33,7 @@ a {
   width: 4px;
   height: 100vh;
   background-color: var(--border-color);
-  cursor: grab;
+  cursor: ew-resize;
 }
 
 .instruments {
