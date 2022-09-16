@@ -4,6 +4,7 @@ import Container from "../components/container";
 import Separator from "../components/separator";
 import Instruments from "../components/instruments";
 import Recipe from "../components/recipe";
+import Io from "../components/io";
 
 type Width = {
   left: number;
@@ -39,7 +40,7 @@ const App = () => {
       </Container>
       <Separator />
       <Container width={width.right}>
-        <div>3</div>
+        <Io />
       </Container>
     </div>
   );
