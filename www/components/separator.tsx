@@ -8,12 +8,12 @@ import React from "react";
 
 // const Container: React.FC<Props> = ({ adjust, left, right }) => {
 const Container: React.FC = () => {
-  const onMouseUp = (e) => {
+  const onMouseUp = (e: any) => {
     document.removeEventListener("mouseup", onMouseUp);
     document.removeEventListener("mousemove", onMouseMove);
   };
 
-  const onMouseDown = (e) => {
+  const onMouseDown = (e: any) => {
     if (e.button === 0) {
       e.preventDefault();
       document.addEventListener("mouseup", onMouseUp);
@@ -21,7 +21,7 @@ const Container: React.FC = () => {
     }
   };
 
-  const onMouseMove = (e) => {
+  const onMouseMove = (e: any) => {
     e.preventDefault();
 
     // adjust((e.pageX / window.innerWidth) * 100);
