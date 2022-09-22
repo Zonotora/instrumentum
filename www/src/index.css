@@ -36,15 +36,16 @@ a {
   cursor: ew-resize;
 }
 
-.instruments {
+.store {
   display: flex;
   flex-direction: column;
 }
 
-.instruments div {
+.recipe div,
+.store div {
   cursor: pointer;
 }
 
-.instruments div:hover {
+.store div:hover {
   background-color: var(--border-color);
 }

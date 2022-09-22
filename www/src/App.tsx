@@ -1,8 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import * as wasm from "instrumentum-rs";
 import Container from "./components/container";
 import Separator from "./components/separator";
-import Instruments from "./components/instruments";
+import Store from "./components/store";
 import Recipe from "./components/recipe";
 import Io from "./components/io";
 
@@ -20,6 +20,7 @@ const initialState: Width = {
 
 const App = () => {
   const [width, setWidth] = useState(initialState);
+  const [instruments, setInstruments] = useState([]);
 
   const adjustLeft = () => {
     setWidth((state) => {
@@ -32,11 +33,11 @@ const App = () => {
   return (
     <div className="main">
       <Container width={width.left}>
-        <Instruments />
+        <Store setInstruments={setInstruments} />
       </Container>
       <Separator />
       <Container width={width.middle}>
-        <Recipe />
+        <Recipe instruments={instruments} setInstruments={setInstruments} />
       </Container>
       <Separator />
       <Container width={width.right}>

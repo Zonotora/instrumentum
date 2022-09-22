@@ -1,15 +1,26 @@
 import React from "react";
-import Draggable from "./draggable";
+import Instrument from "./instrument";
 
-const instruments = ["1", "2", "3", "4"];
+type Props = {
+  instruments: any[];
+  setInstruments: (instruments: any) => void;
+};
 
-type Props = {};
+const Recipe: React.FC<Props> = ({ instruments, setInstruments }) => {
+  const removeInstrument = (index: number) => {
+    setInstruments((instruments: any) => {
+      return instruments.filter((e: any, i: number) => i != index);
+    });
+  };
 
-const Recipe: React.FC<Props> = () => {
   return (
     <div className="recipe">
-      {instruments.map((instrument) => (
-        <Draggable name={instrument} />
+      {instruments.map((instrument, index) => (
+        <Instrument
+          key={index}
+          name={instrument}
+          onClick={() => removeInstrument(index)}
+        />
       ))}
     </div>
   );
