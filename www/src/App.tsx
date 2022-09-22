@@ -1,10 +1,10 @@
 import { useState } from "react";
 import * as wasm from "instrumentum-rs";
-import Container from "../components/container";
-import Separator from "../components/separator";
-import Instruments from "../components/instruments";
-import Recipe from "../components/recipe";
-import Io from "../components/io";
+import Container from "./components/container";
+import Separator from "./components/separator";
+import Instruments from "./components/instruments";
+import Recipe from "./components/recipe";
+import Io from "./components/io";
 
 type Width = {
   left: number;
