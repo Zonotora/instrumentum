@@ -1,12 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
+import IInstrument from "../interfaces/instrument";
+import Separator from "../components/separator";
 
-type Props = {};
+type Props = {
+  instruments: IInstrument[];
+};
 
-const Io: React.FC<Props> = () => {
+const Io: React.FC<Props> = ({ instruments }) => {
+  const [input, setInput] = useState<string>("");
+
+  const output = () => {
+    if (instruments.length === 0) return "";
+
+    try {
+      let stdin = input;
+      for (const instrument of instruments) {
+        stdin = instrument.expr(stdin, instrument.args);
+      }
+      return stdin;
+    } catch (e: any) {
+      return "Invalid format";
+    }
+  };
+
   return (
     <div className="io">
-      <div style={{ height: "50vh", backgroundColor: "#121212" }}>Input</div>
-      <div style={{ height: "50vh", backgroundColor: "#232323" }}>Output</div>
+      <textarea
+        spellCheck={false}
+        onChange={(e) => setInput(e.target.value)}
+      ></textarea>
+      <Separator horizontal />
+      <div className="output">{output()}</div>
     </div>
   );
 };

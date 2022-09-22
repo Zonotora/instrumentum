@@ -6,8 +6,12 @@ import React from "react";
 //   right: number;
 // };
 
+type Props = {
+  horizontal?: boolean;
+};
+
 // const Container: React.FC<Props> = ({ adjust, left, right }) => {
-const Container: React.FC = () => {
+const Container: React.FC<Props> = ({ horizontal }) => {
   const onMouseUp = (e: any) => {
     document.removeEventListener("mouseup", onMouseUp);
     document.removeEventListener("mousemove", onMouseMove);
@@ -27,7 +31,12 @@ const Container: React.FC = () => {
     // adjust((e.pageX / window.innerWidth) * 100);
   };
 
-  return <div className="separator" onMouseDown={onMouseDown} />;
+  return (
+    <div
+      className={horizontal ? "separator-horizontal" : "separator-vertical"}
+      onMouseDown={onMouseDown}
+    />
+  );
 };
 
 export default Container;

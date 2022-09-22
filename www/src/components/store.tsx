@@ -4,15 +4,23 @@ import IInstrument from "../interfaces/instrument";
 
 const instruments: IInstrument[] = [
   {
-    name: "1",
-    children: <div>1</div>,
-    args: { x: 2, y: 1 },
-    expr: ({ x, y }) => x + y,
+    name: "Addition",
+    children: <div></div>,
+    args: { constant: 3 },
+    expr: (stdin, { constant }) => parseInt(stdin) + constant,
   },
-  { name: "2", children: <div>2</div>, args: {}, expr: () => {} },
-  { name: "3", children: <div>3</div>, args: {}, expr: () => {} },
-  { name: "4", children: <div>4</div>, args: {}, expr: () => {} },
-  { name: "5", children: <div>5</div>, args: {}, expr: () => {} },
+  {
+    name: "Mulitplication",
+    children: <div></div>,
+    args: { constant: 3 },
+    expr: (stdin, { constant }) => parseInt(stdin) * constant,
+  },
+  {
+    name: "Power",
+    children: <div></div>,
+    args: { constant: 3 },
+    expr: (stdin, { constant }) => parseInt(stdin) ** constant,
+  },
 ];
 
 type Props = {

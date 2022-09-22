@@ -42,7 +42,7 @@ const App = () => {
       </Container>
       <Separator />
       <Container width={width.right}>
-        <Io />
+        <Io instruments={instruments} />
       </Container>
     </div>
   );

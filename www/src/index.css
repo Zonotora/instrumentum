@@ -11,6 +11,7 @@ body {
   margin: 0px;
   padding: 0px;
   overflow-x: hidden;
+  overflow-y: hidden;
   background-color: var(--background-color);
   color: white;
 }
@@ -29,29 +30,48 @@ a {
   height: 100vh;
 }
 
-.separator {
-  width: 4px;
-  height: 100vh;
-  background-color: var(--border-color);
+.separator-vertical,
+.separator-horizontal {
+  /* background-color: var(--border-color); */
+  flex: 0 0 10px;
+}
+
+.separator-vertical {
   cursor: ew-resize;
+}
+
+.separator-horizontal {
+  cursor: ns-resize;
 }
 
 .store {
   display: flex;
   flex-direction: column;
+  gap: 10px;
+  padding-top: 10px;
 }
 
 .store div {
   cursor: pointer;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-left: 10px;
 }
 
 .store div:hover {
   background-color: var(--border-color);
 }
 
+.recipe {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 10px;
+}
+
 .recipe > div {
   cursor: pointer;
-  margin: 10px;
   padding: 10px;
   border: 1px solid #ddd;
   border-radius: 5px;
@@ -59,4 +79,31 @@ a {
 
 .recipe div:hover {
   background-color: var(--border-color);
+}
+
+.io {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.io textarea,
+.io .output {
+  margin: 10px;
+  margin-left: 0px;
+  padding: 10px;
+  color: white;
+  background-color: transparent;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  outline: none;
+  height: 100%;
+}
+
+.io textarea {
+  margin-bottom: 0px;
+}
+
+.io .output {
+  margin-top: 0px;
 }
