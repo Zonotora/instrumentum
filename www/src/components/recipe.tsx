@@ -18,9 +18,11 @@ const Recipe: React.FC<Props> = ({ instruments, setInstruments }) => {
       {instruments.map((instrument, index) => (
         <Instrument
           key={index}
-          name={instrument}
+          name={instrument.name}
           onClick={() => removeInstrument(index)}
-        />
+        >
+          {instrument.children}
+        </Instrument>
       ))}
     </div>
   );

@@ -5,6 +5,7 @@ import Separator from "./components/separator";
 import Store from "./components/store";
 import Recipe from "./components/recipe";
 import Io from "./components/io";
+import IInstrument from "./interfaces/instrument";
 
 type Width = {
   left: number;
@@ -20,7 +21,7 @@ const initialState: Width = {
 
 const App = () => {
   const [width, setWidth] = useState(initialState);
-  const [instruments, setInstruments] = useState([]);
+  const [instruments, setInstruments] = useState<IInstrument[]>([]);
 
   const adjustLeft = () => {
     setWidth((state) => {
